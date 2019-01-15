@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+@model Implementasi.MVC.Models.Visitor
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ASP.NET MVC</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <p>
+                @Html.LabelFor(m=>m.Nama)
+                @Html.TextBoxFor(m=>m.Nama)
+            </p>
+            <p>
+                @Html.LabelFor(m=>m.Alamat)
+                @Html.TextBoxFor(m=>m.Alamat)
+            </p>
+            <p>
+                @ViewBag.Pesan
+            </p>
+            <p>
+                <input type="submit" value="Kirim" />
+            </p>
+        }
+    </div>
+</body>
+</html>

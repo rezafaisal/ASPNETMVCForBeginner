@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Manajemen Role";
+}
+
+<div class="row-fluid sortable">
+    <div class="box span12">
+        <div class="box-header" data-original-title>
+            <h2><i class="halflings-icon align-justify"></i><span class="break"></span><i class="halflings-icon th-list"></i>@Html.ActionLink("kembali", "Index")</h2>
+            <div class="box-icon">
+                <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
+                <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+                <a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
+            </div>
+        </div>
+        <div class="box-content">
+            @using (Html.BeginForm("Create", "Roles", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                <fieldset>
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="control-group">
+                        @Html.Label("Nama Role", htmlAttributes: new { @class = "control-label" })
+                        <div class="controls">
+                            @Html.TextBox("RoleName", "", new { htmlAttributes = new { @class = "span6 typeahead" } })
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                </fieldset>
+            }
+        </div>
+    </div>
+</div>
+

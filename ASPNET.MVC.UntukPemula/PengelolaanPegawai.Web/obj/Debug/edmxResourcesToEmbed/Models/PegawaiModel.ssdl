@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PegawaiDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Divisi">
+    <Key>
+      <PropertyRef Name="DivisiID" />
+    </Key>
+    <Property Name="DivisiID" Type="int" Nullable="false" />
+    <Property Name="NamaDivisi" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Pegawai">
+    <Key>
+      <PropertyRef Name="NIP" />
+    </Key>
+    <Property Name="NIP" Type="nvarchar" MaxLength="13" Nullable="false" />
+    <Property Name="DivisiID" Type="int" Nullable="false" />
+    <Property Name="Nama" Type="nvarchar" MaxLength="50" />
+    <Property Name="Alamat" Type="nvarchar" MaxLength="150" />
+    <Property Name="TanggalLahir" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_Pegawai_To_Divisi">
+    <End Role="Divisi" Type="Self.Divisi" Multiplicity="1" />
+    <End Role="Pegawai" Type="Self.Pegawai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Divisi">
+        <PropertyRef Name="DivisiID" />
+      </Principal>
+      <Dependent Role="Pegawai">
+        <PropertyRef Name="DivisiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PegawaiDBModelStoreContainer">
+    <EntitySet Name="Divisi" EntityType="Self.Divisi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pegawai" EntityType="Self.Pegawai" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Pegawai_To_Divisi" Association="Self.FK_Pegawai_To_Divisi">
+      <End Role="Divisi" EntitySet="Divisi" />
+      <End Role="Pegawai" EntitySet="Pegawai" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BAB1", "BAB1", "{6E28DE8B-E912-4110-81A9-4282913831EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bab1.ASPNET.WebForm", "Bab1.ASPNET.WebForm\Bab1.ASPNET.WebForm.csproj", "{01257434-4815-421F-BA80-9D6879B1F379}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bab1.ASPNET.MVC", "Bab1.ASPNET.MVC\Bab1.ASPNET.MVC.csproj", "{206FAE90-4404-4A28-9042-7D0A143E24C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01257434-4815-421F-BA80-9D6879B1F379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01257434-4815-421F-BA80-9D6879B1F379}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01257434-4815-421F-BA80-9D6879B1F379}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01257434-4815-421F-BA80-9D6879B1F379}.Release|Any CPU.Build.0 = Release|Any CPU
+		{206FAE90-4404-4A28-9042-7D0A143E24C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{206FAE90-4404-4A28-9042-7D0A143E24C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{206FAE90-4404-4A28-9042-7D0A143E24C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{206FAE90-4404-4A28-9042-7D0A143E24C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{01257434-4815-421F-BA80-9D6879B1F379} = {6E28DE8B-E912-4110-81A9-4282913831EA}
+		{206FAE90-4404-4A28-9042-7D0A143E24C1} = {6E28DE8B-E912-4110-81A9-4282913831EA}
+	EndGlobalSection
+EndGlobal

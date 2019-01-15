@@ -1,0 +1,22 @@
+﻿@model PengelolaanPegawai.Web.Models.TestViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index", "Test", FormMethod.Post))
+{
+    <label>Username</label>
+    @Html.TextBoxFor(m => m.UserName, new { htmlAttributes = new { @class = "span6 typeahead" } })
+    <br />
+    <label>Role</label>
+    @*@Html.DropDownListFor(m => m.Value, ViewBag.Roles as SelectList, "Pilih Role", htmlAttributes: new { @data_rel = "chosen" })*@
+    @Html.DropDownListFor(m => m.RoleId, Model.Roles, "Pilih Role", htmlAttributes: new { @data_rel = "chosen" })
+    <br />
+    <button type="submit" class="btn btn-primary">Kirim</button>
+}
+<br />
+@ViewBag.UserName <br />
+@ViewBag.Role

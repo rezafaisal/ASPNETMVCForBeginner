@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Latihan";
+}
+
+<div class="row-fluid sortable">
+    <div class="box span12">
+        <div class="box-header" data-original-title>
+            <h2><i class="halflings-icon edit"></i><span class="break"></span>Form Latihan</h2>
+            <div class="box-icon">
+                <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
+                <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+                <a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
+            </div>
+        </div>
+        <div class="box-content">
+            @using (Html.BeginForm("Latihan", "Metro", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                <fieldset>
+                    <div class="control-group">
+                        @Html.Label("TextBoxNama", "Nama", new { @class = "control-label", @accesskey = "N" })
+                        <div class="controls">
+                            @Html.TextBox("TextBoxNama", String.Empty, new { @class = "span6 typeahead" })
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        @Html.Label("TextAreaAlamat", "Alamat", new { @class = "control-label" })
+                        <div class="controls">
+                            @Html.TextArea("TextAreaAlamat", String.Empty, new { @class = "cleditor" })
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        @Html.Label("DropDownListPropinsi", "Propinsi", new { @class = "control-label" })
+                        <div class="controls">
+                            @Html.DropDownList("DropDownListPropinsi",
+                                new SelectList(new List<Object> {
+                                    new { value = "KALSEL", text ="Kalimantan Selatan" },
+                                    new { value = "JABAR", text ="Jawa Barat" }
+                                }, "value", "text", 2), "Pilih Propinsi", new { @data_rel = "chosen" })
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        @Html.Label("RadioButtonJenisKelamin", "Jenis Kelamin", new { @class = "control-label" })
+                        <div class="controls">
+                            <label class="radio">
+                                @Html.RadioButton("RadioButtonJenisKelamin", "Laki-laki") Laki-Laki
+                            </label>
+                            <div style="clear:both"></div>
+                            <label class="radio">
+                                @Html.RadioButton("RadioButtonJenisKelamin", "Wanita") Wanita
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        @Html.Label("CheckBoxBahasaC#", "Bahasa Pemrograman", new { @class = "control-label" })
+                        <div class="controls">
+                            <label class="checkbox inline">
+                                @Html.CheckBox("CheckBoxBahasaCSharp") C#
+                            </label>
+                            <label class="checkbox inline">
+                                @Html.CheckBox("CheckBoxBahasaJava") Java
+                            </label>
+                            <label class="checkbox inline">
+                                @Html.CheckBox("CheckBoxBahasaPhyton") Python
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        @Html.Label("ListBoxPekerjaan", "Pengalaman Kerja", new { @class = "control-label" })
+                        <div class="controls">
+                            @Html.ListBox("ListBoxPekerjaan",
+                                new SelectList(new List<Object> {
+                                    new { value = "1", text ="Programmer" },
+                                    new { value = "2", text ="Analis Sistem" },
+                                    new { value = "3", text ="Administrator Database" },
+                                    new { value = "4", text ="Manajer Proyek" },
+                                }, "value", "text", 2), new { @data_rel = "chosen" })
+                        </div>
+                    </div>
+                    @ViewBag.Hasil
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="reset" class="btn">Batal</button>
+                    </div>
+                </fieldset>
+            }
+        </div>
+    </div>
+</div>

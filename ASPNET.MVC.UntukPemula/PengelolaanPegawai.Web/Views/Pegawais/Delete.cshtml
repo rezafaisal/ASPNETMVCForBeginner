@@ -1,0 +1,65 @@
+﻿@model PengelolaanPegawai.Web.Models.Pegawai
+
+@{
+    ViewBag.Title = "Manajemen Pegawai";
+}
+
+<div class="row-fluid sortable">
+    <div class="box span12">
+        <div class="box-header" data-original-title>
+            <h2><i class="halflings-icon align-justify"></i><span class="break"></span><i class="halflings-icon th-list"></i>@Html.ActionLink("kembali", "Index")</h2>
+            <div class="box-icon">
+                <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
+                <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+                <a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
+            </div>
+        </div>
+        <div class="box-content">
+            @using (Html.BeginForm("Delete", "Pegawais", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                <fieldset>
+                    @Html.AntiForgeryToken()
+                    <h3>Are you sure you want to delete this?</h3>
+                    <div class="control-group">
+                        @Html.LabelFor(model => model.NIP, htmlAttributes: new { @class = "control-label" })
+                        <div class="controls">
+                            <span class="input-xlarge uneditable-input">@Html.DisplayFor(model => model.NIP)</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        @Html.LabelFor(model => model.Nama, htmlAttributes: new { @class = "control-label" })
+                        <div class="controls">
+                            <span class="input-xlarge uneditable-input">@Html.DisplayFor(model => model.Nama)</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        @Html.LabelFor(model => model.Divisi.NamaDivisi, htmlAttributes: new { @class = "control-label" })
+                        <div class="controls">
+                            <span class="input-xlarge uneditable-input">@Html.DisplayFor(model => model.Divisi.NamaDivisi)</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        @Html.LabelFor(model => model.Alamat, htmlAttributes: new { @class = "control-label" })
+                        <div class="controls">
+                            <span class="input-xlarge uneditable-input">@Html.DisplayFor(model => model.Alamat)</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        @Html.LabelFor(model => model.TanggalLahir, htmlAttributes: new { @class = "control-label" })
+                        <div class="controls">
+                            <span class="input-xlarge uneditable-input">@Html.DisplayFor(model => model.TanggalLahir)</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Hapus</button>
+                    </div>
+                </fieldset>
+            }
+        </div>
+    </div>
+</div>

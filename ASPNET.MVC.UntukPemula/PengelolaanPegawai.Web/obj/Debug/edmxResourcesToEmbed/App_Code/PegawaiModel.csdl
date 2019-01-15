@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PegawaiDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Divisi">
+    <Key>
+      <PropertyRef Name="DivisiID" />
+    </Key>
+    <Property Name="DivisiID" Type="Int32" Nullable="false" />
+    <Property Name="NamaDivisi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Pegawais" Relationship="Self.FK_Pegawai_To_Divisi" FromRole="Divisi" ToRole="Pegawai" />
+  </EntityType>
+  <EntityType Name="Pegawai">
+    <Key>
+      <PropertyRef Name="NIP" />
+    </Key>
+    <Property Name="NIP" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DivisiID" Type="Int32" Nullable="false" />
+    <Property Name="Nama" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Alamat" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TanggalLahir" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Divisi" Relationship="Self.FK_Pegawai_To_Divisi" FromRole="Pegawai" ToRole="Divisi" />
+  </EntityType>
+  <Association Name="FK_Pegawai_To_Divisi">
+    <End Role="Divisi" Type="Self.Divisi" Multiplicity="1" />
+    <End Role="Pegawai" Type="Self.Pegawai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Divisi">
+        <PropertyRef Name="DivisiID" />
+      </Principal>
+      <Dependent Role="Pegawai">
+        <PropertyRef Name="DivisiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PegawaiDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Divisis" EntityType="Self.Divisi" />
+    <EntitySet Name="Pegawais" EntityType="Self.Pegawai" />
+    <AssociationSet Name="FK_Pegawai_To_Divisi" Association="Self.FK_Pegawai_To_Divisi">
+      <End Role="Divisi" EntitySet="Divisis" />
+      <End Role="Pegawai" EntitySet="Pegawais" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

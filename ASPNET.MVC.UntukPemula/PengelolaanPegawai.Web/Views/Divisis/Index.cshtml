@@ -1,0 +1,48 @@
+﻿@model IEnumerable<PengelolaanPegawai.Web.Models.Divisi>
+
+@{
+    ViewBag.Title = "Manajemen Divisi";
+}
+
+<div class="row-fluid sortable">
+    <div class="box span12" style="margin-left:0px">
+        <div class="box-header" data-original-title>
+            <h2><i class="halflings-icon align-justify"></i><span class="break"></span><i class="halflings-icon plus"></i>@Html.ActionLink("tambah", "Create")</h2>
+            <div class="box-icon">
+                <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
+                <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+                <a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
+            </div>
+        </div>
+        <div class="box-content">
+            <table class="table table-striped table-bordered bootstrap-datatable">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NamaDivisi)
+                    </th>
+                    <th>Actions</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NamaDivisi)
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="@Url.Action("Details", new { id = item.DivisiID })">
+                                <i class="halflings-icon white zoom-in"></i>
+                            </a>
+                            <a class="btn btn-info" href="@Url.Action("Edit", new { id = item.DivisiID })">
+                                <i class="halflings-icon white edit"></i>
+                            </a>
+                            <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.DivisiID })">
+                                <i class="halflings-icon white trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>

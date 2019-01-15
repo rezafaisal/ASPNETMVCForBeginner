@@ -1,0 +1,54 @@
+﻿
+@{
+    Layout = null;
+    int bil1 = 1; @* variable (contoh komentar sebaris) *@
+    int bil2 = 3;
+    int hasil = bil1 + bil2;
+
+    string sekarang = DateTime.Now.ToString();
+    string heading1 = "title";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1 class="@heading1">Halaman Index</h1>
+        <h2>Contoh Ekspresi</h2>
+        @*
+            Nilai-nilai pada blok kode di atas
+            ditampilkan menggunakan ekspresi
+            (contoh komentar multi baris)
+        *@
+        Jumlah @bil1 dan @bil2 adalah @hasil<br />
+        Waktu sekarang adalah @DateTime.Now.ToString()
+
+        @* contoh kondisi *@
+        <h2>Contoh Kondisi</h2>
+        @if (hasil < 6)
+        {
+            <text>Nilai kecil</text>
+        }
+        else
+        {
+            <text>Nilai besar</text>
+        }
+
+        @* contoh pengulangan *@
+        <h2>Contoh Pengulangan</h2>
+        @{int i = 1; }
+
+        @while (i <= hasil)
+        {
+            <text>@i</text><br />
+            i++;
+        }
+
+</div>
+</body>
+</html>

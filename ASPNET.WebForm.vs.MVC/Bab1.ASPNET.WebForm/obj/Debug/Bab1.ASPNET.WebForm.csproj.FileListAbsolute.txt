@@ -1,0 +1,6 @@
+D:\Data\My Documents\My Books\INDC - ASP.NET MVC vs WebForm\source\ASPNET.WebForm.vs.MVC\Bab1.ASPNET.WebForm\bin\Bab1.ASPNET.WebForm.dll.config
+D:\Data\My Documents\My Books\INDC - ASP.NET MVC vs WebForm\source\ASPNET.WebForm.vs.MVC\Bab1.ASPNET.WebForm\bin\Bab1.ASPNET.WebForm.dll
+D:\Data\My Documents\My Books\INDC - ASP.NET MVC vs WebForm\source\ASPNET.WebForm.vs.MVC\Bab1.ASPNET.WebForm\bin\Bab1.ASPNET.WebForm.pdb
+D:\Data\My Documents\My Books\INDC - ASP.NET MVC vs WebForm\source\ASPNET.WebForm.vs.MVC\Bab1.ASPNET.WebForm\obj\Debug\Bab1.ASPNET.WebForm.csprojResolveAssemblyReference.cache
+D:\Data\My Documents\My Books\INDC - ASP.NET MVC vs WebForm\source\ASPNET.WebForm.vs.MVC\Bab1.ASPNET.WebForm\obj\Debug\Bab1.ASPNET.WebForm.dll
+D:\Data\My Documents\My Books\INDC - ASP.NET MVC vs WebForm\source\ASPNET.WebForm.vs.MVC\Bab1.ASPNET.WebForm\obj\Debug\Bab1.ASPNET.WebForm.pdb

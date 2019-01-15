@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PegawaiDBModelStoreContainer" CdmEntityContainer="PegawaiDBEntities">
+    <EntitySetMapping Name="Divisis">
+      <EntityTypeMapping TypeName="PegawaiDBModel.Divisi">
+        <MappingFragment StoreEntitySet="Divisi">
+          <ScalarProperty Name="DivisiID" ColumnName="DivisiID" />
+          <ScalarProperty Name="NamaDivisi" ColumnName="NamaDivisi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pegawais">
+      <EntityTypeMapping TypeName="PegawaiDBModel.Pegawai">
+        <MappingFragment StoreEntitySet="Pegawai">
+          <ScalarProperty Name="NIP" ColumnName="NIP" />
+          <ScalarProperty Name="DivisiID" ColumnName="DivisiID" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+          <ScalarProperty Name="Alamat" ColumnName="Alamat" />
+          <ScalarProperty Name="TanggalLahir" ColumnName="TanggalLahir" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
